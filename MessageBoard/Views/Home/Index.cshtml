@@ -1,45 +1,60 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-@section featured {
-    <section class="featured">
-        <div class="content-wrapper">
-            <hgroup class="title">
-                <h1>@ViewBag.Title.</h1>
-                <h2>@ViewBag.Message</h2>
-            </hgroup>
-            <p>
-                To learn more about ASP.NET MVC visit
-                <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
-                The page features <mark>videos, tutorials, and samples</mark> to help you get the most from ASP.NET MVC.
-                If you have any questions about ASP.NET MVC visit
-                <a href="http://forums.asp.net/1146.aspx/1?MVC" title="ASP.NET MVC Forum">our forums</a>.
-            </p>
+
+<div class="span12">
+    <div class="whity content">
+        <!-- Content should be encloased inside div with the class "posts" -->
+        <div class="posts">
+            <!-- Each entry should be enclosed inside div with the class "entry" -->
+            <div class="entry">
+                <div class="padd">
+                    <!-- Entry title -->
+                    <h2><a href="#">Etiam adipiscing posuere justo, nec iaculis</a></h2>
+                    <!-- Entry para -->
+                    <!-- Add class "alignleft" to image to align left. -->
+                    <p><img src="~/Content/Template/img/photos/3.jpg" class="alignleft" alt="" width="250" />Fusce imperdiet, risus eget viverra faucibus, diam mi vestibulum libero, ut vestibulum tellus magna nec enim. Nunc dapibus varius interdum. Phasellus at lorem ut lectus fermentum convallis. Sed diam nisi, pulvinar vitae molestie hendrerit, venenatis eget mauris. Integer porta erat ac eros porta ultrices. Proin porttitor eros a ante molestie gravida commodo dui adipiscing. <a href="#">Morbi dictum nibh gravida</a> mi pretium dapibus. Nullam in est urna. In vitae adipiscing enim. Curabitur rhoncus condimentum lorem, non convallis dolor faucibus eget. In ut nulla est. Sed a interdum mauris. Duis eget risus ac orci vulputate vestibulum sit amet id orci. Etiam ac ante at lorem ultrices elementum. Vestibulum quis elit odio, id hendrerit ipsum. Fusce consequat leo vitae velit interdum at laoreet justo ullamcorper.</p>
+                    <p>Aenean pharetra, magna et aliquet eleifend, tortor elit suscipit lectus, a dapibus nulla leo et velit. Vestibulum odio erat, porta et hendrerit eu, convallis eget turpis. Cras sit amet nibh dui, a consectetur enim. Nullam sed quam sapien, sit amet venenatis lacus. Vivamus varius suscipit pulvinar.</p>
+                    <blockquote>
+                        <p>Fusce imperdiet, risus eget viverra faucibus, diam mi vestibulum libero, ut vestibulum tellus magna nec enim. Nunc dapibus varius interdum. Phasellus at lorem ut lectus fermentum convallis. Sed diam nisi, pulvinar vitae molestie hendrerit, venenatis eget mauris. Integer porta erat ac eros porta ultrices. </p>
+                        <!-- Author information -->
+                        <small>Ashok</small>
+                    </blockquote>
+                    <p>Aenean porta volutpat neque at suscipit. Quisque a mi velit, vel mollis sapien. Etiam vestibulum bibendum neque, at fermentum leo commodo et. Aenean pharetra, magna et aliquet eleifend, tortor elit suscipit lectus, a dapibus nulla leo et velit. Vestibulum odio erat, porta et hendrerit eu, convallis eget turpis. Cras sit amet nibh dui, a consectetur enim. Nullam sed quam sapien, sit amet venenatis lacus. Vivamus varius suscipit pulvinar.</p>
+                </div>
+            </div>
+            <!-- Features -->
+            <div class="features">
+                <div class="row">
+                    <div class="span4">
+                        <!-- Features #1 -->
+                        <div class="padd-f">
+                            <!-- Heading with font awesome icon -->
+                            <h4><i class="icon-beaker"></i> Curabitur dapibus nisi</h4>
+                            <!-- Para -->
+                            <p>Praesent elementum dignissim hendrerit. Etiam porta congue velit tristique. Duis vehicula, volutpat ultricies, felis consequat lacus, tincidunt odio lacus quis sem. Curabitur dapibus nibh id luctus. Nullam convallis metus nulla, id volutpat mauris. </p>
+                            <!-- Read more Button -->
+                            <a href="#" class="btn">Read more</a>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <!-- Features #2 -->
+                        <div class="padd-m">
+                            <h4><i class="icon-group"></i> Praesent rhoncus arc</h4>
+                            <p>Proin ac urna a urna bibendum adipiscing non pharetra nisi. Cras nec arcu leo, et tempor mi. Phasellus a elementum sem. In hac habitasse platea dictumst. Curabitur at gravida lorem. Praesent, a ultrices mauris. Fusce et urna ligula, eget posuere eros.</p>
+                            <a href="#" class="btn">Read more</a>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <!-- Features #3 -->
+                        <div class="padd-l">
+                            <h4><i class="icon-cloud"></i> Maecenas sed diam</h4>
+                            <p>Sed at elit urna, eu interdum mi. Maecenas sed diam dui, et vulputate lorem. Curabitur pretium, urna et gravida cursus, libero erat dapibus tortor, vel posuere sem. Cras blandit, arcu eget lobortis, risus egestas justo, eget molestie nisl nisl at ligula.</p>
+                            <a href="#" class="btn">Read more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
-}
-<h3>We suggest the following:</h3>
-<ol class="round">
-    <li class="one">
-        <h5>Getting Started</h5>
-        ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-        enables a clean separation of concerns and that gives you full control over markup
-        for enjoyable, agile development. ASP.NET MVC includes many features that enable
-        fast, TDD-friendly development for creating sophisticated applications that use
-        the latest web standards.
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245151">Learn more…</a>
-    </li>
-
-    <li class="two">
-        <h5>Add NuGet packages and jump-start your coding</h5>
-        NuGet makes it easy to install and update free libraries and tools.
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245153">Learn more…</a>
-    </li>
-
-    <li class="three">
-        <h5>Find Web Hosting</h5>
-        You can easily find a web hosting company that offers the right mix of features
-        and price for your applications.
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245157">Learn more…</a>
-    </li>
-</ol>
+    </div>
+</div>
