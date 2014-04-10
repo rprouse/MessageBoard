@@ -1,1 +1,35 @@
-﻿
+﻿@baseMessageColor: #ccc;
+
+.message {
+  border: 1px solid @baseMessageColor;
+  margin-bottom: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: lighten(@baseMessageColor, 25%);
+  margin-left: 0;
+  margin-right: -20px;
+
+  .title {
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 2px 1px 2px @baseMessageColor;
+  }
+
+  .date {    
+      text-align: right;
+      text-shadow: 2px 1px 2px @baseMessageColor;
+  }
+
+  .reply {
+    border-top: 1px solid @baseMessageColor;
+    margin-top: 5px;
+    margin-left: 15px;
+
+    .created {
+      font-size: 11px;
+      margin-left: 10px;
+      text-align: right;
+      text-shadow: 2px 1px 2px @baseMessageColor;
+    }
+  }
+}

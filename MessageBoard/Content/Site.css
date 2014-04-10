@@ -1,0 +1,30 @@
+﻿.message {
+  border: 1px solid #cccccc;
+  margin-bottom: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  margin-left: 0;
+  margin-right: -20px;
+}
+.message .title {
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: 2px 1px 2px #cccccc;
+}
+.message .date {
+  text-align: right;
+  text-shadow: 2px 1px 2px #cccccc;
+}
+.message .reply {
+  border-top: 1px solid #cccccc;
+  margin-top: 5px;
+  margin-left: 15px;
+}
+.message .reply .created {
+  font-size: 11px;
+  margin-left: 10px;
+  text-align: right;
+  text-shadow: 2px 1px 2px #cccccc;
+}
+/*# sourceMappingURL=Site.css.map */
