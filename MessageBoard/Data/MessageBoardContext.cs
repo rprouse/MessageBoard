@@ -2,11 +2,16 @@
 
 namespace MessageBoard.Data
 {
-    public class MessageBoardContext : DbContext
+    public class MessageBoardContext : DbContext, IMessageBoardContext
     {
         public MessageBoardContext()
             : base("DefaultConnection")
         {
+            Configuration.LazyLoadingEnabled = false;
+            Configuration.ProxyCreationEnabled = false;
+
+            Database.SetInitializer( 
+                new MigrateDatabaseToLatestVersion<MessageBoardContext, MessageBoardMigrationsConfiguration>());
         }
 
         public DbSet<Topic> Topics { get; set; }
