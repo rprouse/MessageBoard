@@ -2,7 +2,7 @@
 
 namespace MessageBoard.Data
 {
-    public class MessageBoardContext : DbContext, IMessageBoardContext
+    public class MessageBoardContext : DbContext
     {
         public MessageBoardContext()
             : base("DefaultConnection")
