@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
-<head ng-app>
+<html lang="en" ng-app>
+<head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
   <!-- Change title, description and keywords -->
@@ -85,10 +85,10 @@
                 <div id="ddtopmenubar" class="mattblackmenu">
                   <!-- Main navigation -->
                   <ul>
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("My Messages", "MyMessages", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink( "Home", "Index", "Home" )</li>
+                    <li>@Html.ActionLink( "Contact", "Contact", "Home" )</li>
+                    <li>@Html.ActionLink( "My Messages", "MyMessages", "Home" )</li>
+                    <li>@Html.ActionLink( "About", "About", "Home" )</li>
 
                   </ul>
                 </div>
@@ -195,6 +195,6 @@
   <script src="~/Scripts/jquery.prettyPhoto.js"></script>
   <script src="~/Scripts/custom.min.js"></script>
 
-  @RenderSection("scripts", required: false)
+  @RenderSection( "scripts", required: false )
 </body>
 </html>
