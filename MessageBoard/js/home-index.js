@@ -80,7 +80,7 @@ module.factory("dataService", function ($http, $q) {
       }
     } else {
       _getTopics()
-        .then(function() {
+        .then(function () {
           // Success
           var topic = _findTopic(id);
           if (topic) {
@@ -88,8 +88,8 @@ module.factory("dataService", function ($http, $q) {
           } else {
             deferred.reject();
           }
-          },
-          function() {
+        },
+          function () {
             // Error
             deferred.reject();
           });
@@ -100,7 +100,7 @@ module.factory("dataService", function ($http, $q) {
   function _findTopic(id) {
     var found = null;
 
-    $.each(_topics, function(i, item) {
+    $.each(_topics, function (i, item) {
       if (item.id == id) {
         found = item;
         return false;
@@ -110,13 +110,31 @@ module.factory("dataService", function ($http, $q) {
     return found;
   }
 
+  var _saveReply = function (topic, newReply) {
+    var deferred = $q.defer();
+
+    $http.post("/api/topics/" + topic.id + "/replies", newReply)
+        .then(function (result) {
+          // Success
+          if (topic.replies == null) topic.replies = [];
+          topic.replies.push(result.data);
+          deferred.resolve(result.data);
+        },
+        function () {
+          // Error
+          deferred.reject();
+        });
+    return deferred.promise;
+  };
+
   return {
     topics: _topics,
     isReady: _isReady,
     getTopics: _getTopics,
     addTopic: _addTopic,
-    getTopicById: _getTopicById
-};
+    getTopicById: _getTopicById,
+    saveReply: _saveReply
+  };
 });
 
 function topicsController($scope, $http, dataService) {
@@ -169,6 +187,14 @@ function singleTopicController($scope, $window, dataService, $routeParams) {
     });
 
   $scope.addReply = function () {
-
+    dataService.saveReply($scope.topic, $scope.newReply)
+    .then(function (topic) {
+      // success
+      $scope.newReply.body = "";
+    },
+    function () {
+      // error
+      alert("Could not save the new reply");
+    });
   };
 }
