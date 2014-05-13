@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30324.0
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBoard", "MessageBoard\MessageBoard.csproj", "{34C3C6A0-2963-4C5B-9CD4-831D74DD38AE}"
 EndProject
@@ -12,7 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		WE-browsers.xml = WE-browsers.xml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBoard.Test", "MessageBoard.Test\MessageBoard.Test.csproj", "{3A939472-A479-43E6-A0B2-439ED114FFB6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBoard.Test", "MessageBoard.Test\MessageBoard.Test.csproj", "{506AC6C3-34F1-4128-8F2D-0B140AC38AB4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,10 +24,10 @@ Global
 		{34C3C6A0-2963-4C5B-9CD4-831D74DD38AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34C3C6A0-2963-4C5B-9CD4-831D74DD38AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34C3C6A0-2963-4C5B-9CD4-831D74DD38AE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3A939472-A479-43E6-A0B2-439ED114FFB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3A939472-A479-43E6-A0B2-439ED114FFB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3A939472-A479-43E6-A0B2-439ED114FFB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3A939472-A479-43E6-A0B2-439ED114FFB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{506AC6C3-34F1-4128-8F2D-0B140AC38AB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{506AC6C3-34F1-4128-8F2D-0B140AC38AB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{506AC6C3-34F1-4128-8F2D-0B140AC38AB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{506AC6C3-34F1-4128-8F2D-0B140AC38AB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
