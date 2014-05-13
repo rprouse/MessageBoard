@@ -101,7 +101,7 @@ module.factory("dataService", function ($http, $q) {
     var found = null;
 
     $.each(_topics, function (i, item) {
-      if (item.id == id) {
+      if (item.id === id) {
         found = item;
         return false;
       }
@@ -116,7 +116,7 @@ module.factory("dataService", function ($http, $q) {
     $http.post("/api/topics/" + topic.id + "/replies", newReply)
         .then(function (result) {
           // Success
-          if (topic.replies == null) topic.replies = [];
+          if (topic.replies === null) topic.replies = [];
           topic.replies.push(result.data);
           deferred.resolve(result.data);
         },
@@ -142,7 +142,7 @@ function topicsController($scope, $http, dataService) {
   $scope.isBusy = false;
   $scope.data = dataService;
 
-  if (dataService.isReady() == false) {
+  if (dataService.isReady() === false) {
     $scope.isBusy = true;
     dataService.getTopics()
       .then(function () {
