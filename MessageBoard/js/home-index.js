@@ -13,6 +13,11 @@ module.config(function ($routeProvider) {
     templateUrl: "/templates/newTopicView.html"
   });
 
+  $routeProvider.when("/message/:id", {
+    controller: "singleTopicController",
+    templateUrl: "/templates/singleTopicView.html"
+  });
+
   $routeProvider.otherwise({ redirectTo: "/" });
 });
 
@@ -20,7 +25,7 @@ module.factory("dataService", function ($http, $q) {
   var _topics = [];
   var _isInit = false;
 
-  var _isReady = function() {
+  var _isReady = function () {
     return _isInit;
   };
 
@@ -63,12 +68,55 @@ module.factory("dataService", function ($http, $q) {
     return deferred.promise;
   };
 
+  var _getTopicById = function (id) {
+    var deferred = $q.defer();
+
+    if (_isReady()) {
+      var topic = _findTopic(id);
+      if (topic) {
+        deferred.resolve(topic);
+      } else {
+        deferred.reject();
+      }
+    } else {
+      _getTopics()
+        .then(function() {
+          // Success
+          var topic = _findTopic(id);
+          if (topic) {
+            deferred.resolve(topic);
+          } else {
+            deferred.reject();
+          }
+          },
+          function() {
+            // Error
+            deferred.reject();
+          });
+    }
+    return deferred.promise;
+  };
+
+  function _findTopic(id) {
+    var found = null;
+
+    $.each(_topics, function(i, item) {
+      if (item.id == id) {
+        found = item;
+        return false;
+      }
+    });
+
+    return found;
+  }
+
   return {
     topics: _topics,
     isReady: _isReady,
     getTopics: _getTopics,
-    addTopic: _addTopic
-  };
+    addTopic: _addTopic,
+    getTopicById: _getTopicById
+};
 });
 
 function topicsController($scope, $http, dataService) {
@@ -79,13 +127,13 @@ function topicsController($scope, $http, dataService) {
   if (dataService.isReady() == false) {
     $scope.isBusy = true;
     dataService.getTopics()
-      .then(function() {
+      .then(function () {
         // Success
-      }, function() {
+      }, function () {
         // Error
         alert("Could not get the topics");
       })
-      .then(function() {
+      .then(function () {
         $scope.isBusy = false;
       });
   }
@@ -103,5 +151,24 @@ function newTopicController($scope, $http, $window, dataService) {
       function () {
         alert("Could not save topic");
       });
+  };
+}
+
+function singleTopicController($scope, $window, dataService, $routeParams) {
+  $scope.topics = null;
+  $scope.newReply = {};
+
+  dataService.getTopicById($routeParams.id)
+    .then(function (topic) {
+      // success
+      $scope.topic = topic;
+    },
+    function () {
+      // error
+      $window.location = "#/";
+    });
+
+  $scope.addReply = function () {
+
   };
 }
