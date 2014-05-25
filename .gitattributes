@@ -62,4 +62,6 @@
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
 
-MessageBoard/Content/Site.css text eol=lf
+MessageBoard/Content/Site.css	text eol=lf
+MessageBoard.Test/Scripts/*.js	text eol=lf
+MessageBoard.Test/css/jasmine.css	text eol=lf

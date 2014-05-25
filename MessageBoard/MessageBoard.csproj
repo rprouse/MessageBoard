@@ -321,6 +321,7 @@
     <Content Include="Content\Template\font-awesome\fontawesome-webfont.ttf" />
     <Content Include="Content\Template\font-awesome\fontawesome-webfont.woff" />
     <Content Include="js\home-index.js" />
+    <Content Include="js\myapp.js" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-cookies.js" />
